@@ -39,9 +39,7 @@ public class Lista {
     }
 
     public boolean palabraPalindroma() {
-
         if (!vacia()) {
-
             int mitad = (int) (this.getCantidad() / 2);
             int i = 0;
             Nodo primero = inicio;
@@ -50,16 +48,12 @@ public class Lista {
                 if (primero.getDato() == ultimo.getDato()) {
                     primero = primero.getSiguiente();
                     ultimo = ultimo.getAnterior();
-
                 } else {
                     return false;
                 }
                 i++;
-
             }
-
             return true;
-
         }
         return false;
     }
@@ -80,14 +74,14 @@ public class Lista {
         return false;
     }
 
-    public void venderProducto (int codigo){
+    public void venderProducto(int codigo) {
         Producto aVender = buscarProducto(codigo);
-        if (aVender!=null) {
+        if (aVender != null) {
             aVender.vender();
         }
     }
 
-    public Lista cantidadBodegaCero(){
+    public Lista cantidadBodegaCero() {
         Producto producto = null;
         if (!vacia()) {
             Lista salida = new Lista();
@@ -95,9 +89,9 @@ public class Lista {
             while (aux != null) {
                 //verifica si el objeto que entra por parametro es de la misma clase
                 //y si es el elemento que se está buscando
-                if(aux.getDato() instanceof Producto){
-                    producto = (Producto)(aux.getDato());
-                    if(producto.getCantidadBodega()==0){
+                if (aux.getDato() instanceof Producto) {
+                    producto = (Producto) (aux.getDato());
+                    if (producto.getCantidadBodega() == 0) {
                         salida.agregarFin(producto);
                     }
 
@@ -109,21 +103,21 @@ public class Lista {
         return null;
     }
 
-    public Lista masVendidos(){
+    public Lista masVendidos() {
 
 
         if (!vacia()) {
             Lista salida = new Lista();
             Nodo aux = inicio;
-            int valorMax=0;
+            int valorMax = 0;
             while (aux != null) {
 
-                if(aux.getDato() instanceof Producto){
-                    Producto productoAux=(Producto)(aux.getDato());
-                    if(productoAux.getCantidadVendida()>valorMax){
-                        valorMax=productoAux.getCantidadVendida();
+                if (aux.getDato() instanceof Producto) {
+                    Producto productoAux = (Producto) (aux.getDato());
+                    if (productoAux.getCantidadVendida() > valorMax) {
+                        valorMax = productoAux.getCantidadVendida();
                         salida.agregarInicio(productoAux);
-                    }else{
+                    } else {
                         salida.agregarFin(productoAux);
                     }
 
@@ -143,9 +137,9 @@ public class Lista {
             while (aux != null) {
                 //verifica si el objeto que entra por parametro es de la misma clase
                 //y si es el elemento que se está buscando
-                if(aux.getDato() instanceof Producto){
-                    salida = (Producto)(aux.getDato());
-                    if(salida.getCodigo()==codigo){
+                if (aux.getDato() instanceof Producto) {
+                    salida = (Producto) (aux.getDato());
+                    if (salida.getCodigo() == codigo) {
                         return salida;
                     }
 
@@ -195,18 +189,17 @@ public class Lista {
         return salida;
     }
 
-    public void insertarLista(){
+    public void insertarLista() {
         Nodo primero = inicio;
         Nodo ultimo = fin;
 
-        for (int i = 0; i < this.cantidad/2; i++) {
-            Object aux= primero.getDato();
+        for (int i = 0; i < this.cantidad / 2; i++) {
+            Object aux = primero.getDato();
             primero.setDato(ultimo.getDato());
             ultimo.setDato(aux);
-            ultimo=ultimo.getAnterior();
-            primero=primero.getSiguiente();
+            ultimo = ultimo.getAnterior();
+            primero = primero.getSiguiente();
         }
-
 
 
     }

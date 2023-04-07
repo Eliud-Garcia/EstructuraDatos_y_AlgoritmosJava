@@ -1,34 +1,35 @@
-package ListasClientes;
+package ListaSimpleObjetos;
 
-public class NodoO {
-    private Cliente dato;
-    private NodoO siguiente;
+
+public class Nodo {
+    private Object dato;
+    private Nodo siguiente;
 
 
     //Contructor para agregar al inicio
-    public NodoO(Cliente dato, NodoO siguiente) {
+    public Nodo(Object dato, Nodo siguiente) {
         this.dato = dato;
         this.siguiente = siguiente;
     }
     //Constructor para agregar al fin
-    public NodoO(Cliente dato) {
+    public Nodo(Object dato) {
         this.dato = dato;
         this.siguiente=null;
     }
 
-    public Cliente getDato() {
+    public Object getDato() {
         return dato;
     }
 
-    public void setDato(Cliente dato) {
+    public void setDato(Object dato) {
         this.dato = dato;
     }
 
-    public NodoO getSiguiente() {
+    public Nodo getSiguiente() {
         return siguiente;
     }
 
-    public void setSiguiente(NodoO siguiente) {
+    public void setSiguiente(Nodo siguiente) {
         this.siguiente = siguiente;
     }
 

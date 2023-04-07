@@ -1,8 +1,8 @@
-package ListasClientes;
+package Nodo;
 
 public class ListaObjetos {
-    private NodoO inicio;
-    private NodoO fin;
+    private Nodo inicio;
+    private Nodo fin;
     private int cantidadElementos;
 
     public ListaObjetos() {
@@ -10,24 +10,24 @@ public class ListaObjetos {
         this.fin = null;
         this.cantidadElementos = 0;
     }
-    public void agregarInicio(Cliente nuevo) {
+    public void agregarInicio(Object nuevo) {
        if(!buscar(nuevo.getCedula())){
            if (vacia()) {
-               fin = inicio = new NodoO(nuevo);
+               fin = inicio = new Nodo(nuevo);
            } else {
-               inicio = new NodoO(nuevo, inicio);
+               inicio = new Nodo(nuevo, inicio);
            }
            cantidadElementos++;
        }
     }
 
-    public void agregarFin(Cliente nuevo) {
+    public void agregarFin(Object nuevo) {
         if(!buscar(nuevo.getCedula())){
             if (vacia()) {
                 agregarInicio(nuevo);
 
             } else {
-                fin.setSiguiente(new NodoO(nuevo));
+                fin.setSiguiente(new Nodo(nuevo));
                 fin = fin.getSiguiente();
                 cantidadElementos++;
             }
@@ -36,7 +36,7 @@ public class ListaObjetos {
     }
     public boolean buscar(long cedula) {
         if (!vacia()) {
-            NodoO aux = inicio;
+            Nodo aux = inicio;
             while (aux != null) {
                 if (aux.getDato().getCedula() == cedula) {
                     return true;
@@ -52,7 +52,7 @@ public class ListaObjetos {
 
     public String mostrar() {
         String salida = "";
-        NodoO aux = inicio;
+        Nodo aux = inicio;
         while (aux != null) {
             salida += aux.getDato().getNombre() + ", ";
             aux = aux.getSiguiente();
@@ -72,8 +72,8 @@ public class ListaObjetos {
             } else if (cedula == inicio.getDato().getCedula()) {
                 inicio = inicio.getSiguiente();
             } else {
-                NodoO anterior = inicio;
-                NodoO temporal = inicio.getSiguiente();
+                Nodo anterior = inicio;
+                Nodo temporal = inicio.getSiguiente();
                 while (temporal != null && temporal.getDato().getCedula() != cedula) {
                     anterior = anterior.getSiguiente();
                     temporal = temporal.getSiguiente();

@@ -1,15 +1,13 @@
-package ListasClientes;
+package Nodo;
 
-import java.util.Objects;
-
-public class Cliente {
+public class Object {
     //cédula, nombre y procedencia de los clientes
     private String nombre;
     private long cedula;
     private String procedencia;
     private String registradoPor;
 
-    public Cliente() {
+    public Object() {
 
         this.nombre = "N"+(cedula);
         this.procedencia = "P"+((int)(Math.random()*5+1));
@@ -17,7 +15,7 @@ public class Cliente {
         cedula++;
     }
 
-    public Cliente(String nombre) {
+    public Object(String nombre) {
         this.nombre = nombre;
         this.cedula=((long)(Math.random()*10+1));
         this.procedencia = "P"+((int)(Math.random()*4+1));
@@ -62,10 +60,10 @@ public class Cliente {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(java.lang.Object o) {
         boolean salida = false;
-        if(o instanceof Cliente){
-            salida=(this.cedula==((Cliente) o).getCedula());
+        if(o instanceof Object){
+            salida=(this.cedula==((Object) o).getCedula());
         }
         return salida;
     }

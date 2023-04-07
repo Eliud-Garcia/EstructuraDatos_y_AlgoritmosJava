@@ -1,25 +1,26 @@
-package ListaSimplementeEnlazada;
+package Nodo;
 
 public class Nodo {
-    private int dato;
+    private Object dato;
     private Nodo siguiente;
 
+
     //Contructor para agregar al inicio
-    public Nodo(int dato, Nodo siguiente) {
+    public Nodo(Object dato, Nodo siguiente) {
         this.dato = dato;
         this.siguiente = siguiente;
     }
     //Constructor para agregar al fin
-    public Nodo(int dato) {
+    public Nodo(Object dato) {
         this.dato = dato;
         this.siguiente=null;
     }
 
-    public int getDato() {
+    public Object getDato() {
         return dato;
     }
 
-    public void setDato(int dato) {
+    public void setDato(Object dato) {
         this.dato = dato;
     }
 
@@ -38,6 +39,4 @@ public class Nodo {
                 ", siguiente=" + siguiente +
                 '}';
     }
-
-
 }
