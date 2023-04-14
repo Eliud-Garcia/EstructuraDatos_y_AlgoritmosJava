@@ -1,4 +1,4 @@
-package ListaDoblementeEnlazada;
+package Listas.ListaDoble;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package ListaSimplementeEnlazada;
+package Listas.ListaSimple;
 
 public class Principal {
     public static void main(String[] args) {
@@ -54,7 +54,7 @@ public class Principal {
         //EJERCICIO -> ELIMINAR LOS DATOS IGUALES A N EN UNA LISTA
         Lista x = new Lista();
         for (int i = 0; i < 10; i++) {
-            x.agregarFin((int)(Math.random()*4+1));
+            x.agregarFin((int) (Math.random() * 4 + 1));
         }
         System.out.println(x.mostrar());
         x.eliminarValorN(2);

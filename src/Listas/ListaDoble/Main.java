@@ -1,4 +1,4 @@
-package ListaDoblementeEnlazada;
+package Listas.ListaDoble;
 
 public class Main {
     public static void main(String[] args) {

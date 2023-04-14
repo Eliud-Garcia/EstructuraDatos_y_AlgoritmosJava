@@ -1,4 +1,4 @@
-package ListaSimplementeEnlazada;
+package Listas.ListaSimple;
 
 public class Ejercicio1 {
     public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class Ejercicio1 {
 
 
         System.out.println(lista1.mostrar());
-        System.out.println("Sumatoria= "+lista1.sumatoria());
+        System.out.println("Sumatoria= " + lista1.sumatoria());
 
         lista1.ejercicio1();
         System.out.println(lista1.mostrar());

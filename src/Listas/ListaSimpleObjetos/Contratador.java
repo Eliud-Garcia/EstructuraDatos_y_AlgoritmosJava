@@ -1,25 +1,25 @@
-package Nodo;
+package Listas.ListaSimpleObjetos;
 
-public class Object {
+public class Contratador {
     //cédula, nombre y procedencia de los clientes
     private String nombre;
     private long cedula;
     private String procedencia;
     private String registradoPor;
 
-    public Object() {
+    public Contratador() {
 
-        this.nombre = "N"+(cedula);
-        this.procedencia = "P"+((int)(Math.random()*5+1));
-        this.registradoPor="R"+((int)(Math.random()*3+1));
+        this.nombre = "N" + (cedula);
+        this.procedencia = "P" + ((int) (Math.random() * 5 + 1));
+        this.registradoPor = "R" + ((int) (Math.random() * 3 + 1));
         cedula++;
     }
 
-    public Object(String nombre) {
+    public Contratador(String nombre) {
         this.nombre = nombre;
-        this.cedula=((long)(Math.random()*10+1));
-        this.procedencia = "P"+((int)(Math.random()*4+1));
-        this.registradoPor="R"+((int)(Math.random()*3+1));
+        this.cedula = ((long) (Math.random() * 10 + 1));
+        this.procedencia = "P" + ((int) (Math.random() * 4 + 1));
+        this.registradoPor = "R" + ((int) (Math.random() * 3 + 1));
     }
 
     public String getRegistradoPor() {
@@ -62,8 +62,8 @@ public class Object {
     @Override
     public boolean equals(java.lang.Object o) {
         boolean salida = false;
-        if(o instanceof Object){
-            salida=(this.cedula==((Object) o).getCedula());
+        if (o instanceof Contratador) {
+            salida = (this.cedula == ((Contratador) o).getCedula());
         }
         return salida;
     }

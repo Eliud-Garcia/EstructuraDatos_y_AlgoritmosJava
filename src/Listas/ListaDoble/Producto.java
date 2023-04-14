@@ -1,4 +1,4 @@
-package ListaDoblementeEnlazada;
+package Listas.ListaDoble;
 
 public class Producto {
     private int codigo;

@@ -1,27 +1,26 @@
-package ListaSimpleObjetos;
-
+package Listas.ListaSimple;
 
 public class Nodo {
-    private Object dato;
+    private int dato;
     private Nodo siguiente;
 
-
     //Contructor para agregar al inicio
-    public Nodo(Object dato, Nodo siguiente) {
+    public Nodo(int dato, Nodo siguiente) {
         this.dato = dato;
         this.siguiente = siguiente;
     }
+
     //Constructor para agregar al fin
-    public Nodo(Object dato) {
+    public Nodo(int dato) {
         this.dato = dato;
-        this.siguiente=null;
+        this.siguiente = null;
     }
 
-    public Object getDato() {
+    public int getDato() {
         return dato;
     }
 
-    public void setDato(Object dato) {
+    public void setDato(int dato) {
         this.dato = dato;
     }
 
@@ -40,4 +39,6 @@ public class Nodo {
                 ", siguiente=" + siguiente +
                 '}';
     }
+
+
 }

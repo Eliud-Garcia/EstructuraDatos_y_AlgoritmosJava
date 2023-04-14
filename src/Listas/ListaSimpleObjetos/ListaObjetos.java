@@ -1,4 +1,4 @@
-package Nodo;
+package Listas.ListaSimpleObjetos;
 
 public class ListaObjetos {
     private Nodo inicio;
@@ -10,19 +10,20 @@ public class ListaObjetos {
         this.fin = null;
         this.cantidadElementos = 0;
     }
-    public void agregarInicio(Object nuevo) {
-       if(!buscar(nuevo.getCedula())){
-           if (vacia()) {
-               fin = inicio = new Nodo(nuevo);
-           } else {
-               inicio = new Nodo(nuevo, inicio);
-           }
-           cantidadElementos++;
-       }
+
+    public void agregarInicio(Contratador nuevo) {
+        if (!buscar(nuevo.getCedula())) {
+            if (vacia()) {
+                fin = inicio = new Nodo(nuevo);
+            } else {
+                inicio = new Nodo(nuevo, inicio);
+            }
+            cantidadElementos++;
+        }
     }
 
-    public void agregarFin(Object nuevo) {
-        if(!buscar(nuevo.getCedula())){
+    public void agregarFin(Contratador nuevo) {
+        if (!buscar(nuevo.getCedula())) {
             if (vacia()) {
                 agregarInicio(nuevo);
 
@@ -34,6 +35,7 @@ public class ListaObjetos {
         }
 
     }
+
     public boolean buscar(long cedula) {
         if (!vacia()) {
             Nodo aux = inicio;
@@ -45,7 +47,6 @@ public class ListaObjetos {
             }
         }
         return false;
-
 
 
     }
@@ -60,6 +61,7 @@ public class ListaObjetos {
         return salida;
 
     }
+
     //para saber si está vacia
     public boolean vacia() {
         return (inicio == null && fin == null);

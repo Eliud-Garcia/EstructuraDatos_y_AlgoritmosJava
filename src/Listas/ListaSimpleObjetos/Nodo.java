@@ -1,25 +1,27 @@
-package ListaSimplementeEnlazada;
+package Listas.ListaSimpleObjetos;
 
 public class Nodo {
-    private int dato;
+    private Contratador dato;
     private Nodo siguiente;
 
+
     //Contructor para agregar al inicio
-    public Nodo(int dato, Nodo siguiente) {
+    public Nodo(Contratador dato, Nodo siguiente) {
         this.dato = dato;
         this.siguiente = siguiente;
     }
+
     //Constructor para agregar al fin
-    public Nodo(int dato) {
+    public Nodo(Contratador dato) {
         this.dato = dato;
-        this.siguiente=null;
+        this.siguiente = null;
     }
 
-    public int getDato() {
+    public Contratador getDato() {
         return dato;
     }
 
-    public void setDato(int dato) {
+    public void setDato(Contratador dato) {
         this.dato = dato;
     }
 
@@ -38,6 +40,4 @@ public class Nodo {
                 ", siguiente=" + siguiente +
                 '}';
     }
-
-
 }

@@ -1,19 +1,15 @@
-package Nodo;
+package Listas.ListaDoble;
 
 public class Nodo {
     private Object dato;
     private Nodo siguiente;
+    private Nodo anterior;
 
-
-    //Contructor para agregar al inicio
-    public Nodo(Object dato, Nodo siguiente) {
+ // este contructor sirve para agregar al final o al inicio
+    public Nodo(Object dato, Nodo siguiente, Nodo anterior) {
         this.dato = dato;
         this.siguiente = siguiente;
-    }
-    //Constructor para agregar al fin
-    public Nodo(Object dato) {
-        this.dato = dato;
-        this.siguiente=null;
+        this.anterior = anterior;
     }
 
     public Object getDato() {
@@ -32,11 +28,12 @@ public class Nodo {
         this.siguiente = siguiente;
     }
 
-    @Override
-    public String toString() {
-        return "Nodo{" +
-                "dato=" + dato +
-                ", siguiente=" + siguiente +
-                '}';
+    public Nodo getAnterior() {
+        return anterior;
     }
+
+    public void setAnterior(Nodo anterior) {
+        this.anterior = anterior;
+    }
+
 }

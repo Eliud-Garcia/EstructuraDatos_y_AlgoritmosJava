@@ -1,4 +1,4 @@
-package ListaSimplementeEnlazada;
+package Listas.ListaSimple;
 
 public class Lista {
 
@@ -48,70 +48,70 @@ public class Lista {
 
     public void ejercicio2() {
         Nodo aux = inicio;
-       if(!vacia()){
-           if (this.cantidadElementos % 2 == 0) {
-               //solo deja los pares
-               eliminarInicio();
-               aux=inicio;
-               while (aux.getSiguiente()!=null){
-                   aux.setSiguiente(aux.getSiguiente().getSiguiente());
-                   aux=aux.getSiguiente();
-                   cantidadElementos--;
-               }
-               
-           } else {
-               aux=inicio;
-               while (aux.getSiguiente()!=null){
-                   aux.setSiguiente(aux.getSiguiente().getSiguiente());
-                   cantidadElementos--;
-                   aux=aux.getSiguiente();
-               }
-           }
-       }
+        if (!vacia()) {
+            if (this.cantidadElementos % 2 == 0) {
+                //solo deja los pares
+                eliminarInicio();
+                aux = inicio;
+                while (aux.getSiguiente() != null) {
+                    aux.setSiguiente(aux.getSiguiente().getSiguiente());
+                    aux = aux.getSiguiente();
+                    cantidadElementos--;
+                }
+
+            } else {
+                aux = inicio;
+                while (aux.getSiguiente() != null) {
+                    aux.setSiguiente(aux.getSiguiente().getSiguiente());
+                    cantidadElementos--;
+                    aux = aux.getSiguiente();
+                }
+            }
+        }
     }
 
     public void ejercicio3() {
         if (!vacia()) {
             Nodo aux;
             //borra los pares
-            if(sum_ParesImpares()){
-                if(cantidadElementos%2==0){
-                    aux=inicio;
-                    while (aux.getSiguiente()!=fin){
+            if (sum_ParesImpares()) {
+                if (cantidadElementos % 2 == 0) {
+                    aux = inicio;
+                    while (aux.getSiguiente() != fin) {
                         aux.setSiguiente(aux.getSiguiente().getSiguiente());
-                        aux=aux.getSiguiente();
+                        aux = aux.getSiguiente();
                         cantidadElementos--;
                     }
-                    fin=aux;
+                    fin = aux;
                     fin.setSiguiente(null);
-                }else{
-                    aux=inicio;
-                    while (aux.getSiguiente()!=null){
+                } else {
+                    aux = inicio;
+                    while (aux.getSiguiente() != null) {
                         aux.setSiguiente(aux.getSiguiente().getSiguiente());
-                        aux=aux.getSiguiente();
+                        aux = aux.getSiguiente();
                         cantidadElementos--;
                     }
 
                 }
-            }else{
+            } else {
                 eliminarInicio();
 
-                if(cantidadElementos%2==0){
+                if (cantidadElementos % 2 == 0) {
                     //borra impares
-                    aux=inicio;
-                    while (aux.getSiguiente()!=null){
+                    aux = inicio;
+                    while (aux.getSiguiente() != null) {
                         aux.setSiguiente(aux.getSiguiente().getSiguiente());
-                        aux=aux.getSiguiente();
+                        aux = aux.getSiguiente();
                         cantidadElementos--;
                     }
-                }else{
-                    aux=inicio;
-                    while (aux.getSiguiente()!=fin){
+                } else {
+                    aux = inicio;
+                    while (aux.getSiguiente() != fin) {
                         aux.setSiguiente(aux.getSiguiente().getSiguiente());
-                        aux=aux.getSiguiente();
+                        aux = aux.getSiguiente();
                         cantidadElementos--;
                     }
-                    fin=aux;
+                    fin = aux;
                     fin.setSiguiente(null);
                 }
             }
@@ -121,21 +121,22 @@ public class Lista {
 
     }
 
-    public Lista listaDatosPares(Lista a){
+    public Lista listaDatosPares(Lista a) {
         Lista salida = new Lista();
-        if(!a.vacia()){
+        if (!a.vacia()) {
 
-            Nodo aux=a.getInicio();
-            while (aux!=null){
-                if(aux.getDato()%2==0){
+            Nodo aux = a.getInicio();
+            while (aux != null) {
+                if (aux.getDato() % 2 == 0) {
                     salida.agregarFin(aux.getDato());
                     salida.cantidadElementos++;
                 }
-                aux=aux.getSiguiente();
+                aux = aux.getSiguiente();
             }
         }
         return salida;
     }
+
     public double sumatoriaDecimales() {
         double suma = 0;
         Nodo aux = this.inicio;
@@ -145,36 +146,37 @@ public class Lista {
         }
         return suma;
     }
-    public Lista mayoresPromedio(){
+
+    public Lista mayoresPromedio() {
         Lista salida = new Lista();
-        if(!vacia()){
-            double promedio = sumatoriaDecimales()/cantidadElementos;
-            Nodo aux=inicio;
-            while (aux!=null){
-                if(aux.getDato()>=promedio){
+        if (!vacia()) {
+            double promedio = sumatoriaDecimales() / cantidadElementos;
+            Nodo aux = inicio;
+            while (aux != null) {
+                if (aux.getDato() >= promedio) {
                     salida.agregarFin(aux.getDato());
                     salida.cantidadElementos++;
                 }
-                aux=aux.getSiguiente();
+                aux = aux.getSiguiente();
             }
         }
         return salida;
     }
 
-    public void eliminarValorN(int n){
-        Nodo aux=inicio;
-        while (aux.getSiguiente()!=null){
-            if(inicio.getDato()==n){
+    public void eliminarValorN(int n) {
+        Nodo aux = inicio;
+        while (aux.getSiguiente() != null) {
+            if (inicio.getDato() == n) {
                 eliminarInicio();
-                aux=inicio;
-            }else if(aux.getSiguiente().getDato()==n){
+                aux = inicio;
+            } else if (aux.getSiguiente().getDato() == n) {
                 aux.setSiguiente(aux.getSiguiente().getSiguiente());
                 cantidadElementos--;
             }
-            aux=aux.getSiguiente();
+            aux = aux.getSiguiente();
 
         }
-        if(fin.getDato()==n){
+        if (fin.getDato() == n) {
             eliminarFin();
         }
     }
