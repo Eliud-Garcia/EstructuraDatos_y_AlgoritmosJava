@@ -10,6 +10,8 @@ public class Nodo {
         this.dato = dato;
         this.siguiente = siguiente;
     }
+
+    //Getter and Setter
     public Estudiante getDato() {
         return dato;
     }

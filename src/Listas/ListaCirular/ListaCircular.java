@@ -12,33 +12,10 @@ public class ListaCircular {
         this.cantidad = 0;
     }
 
-    public Nodo getInicio() {
-        return inicio;
-    }
-
-    public void setInicio(Nodo inicio) {
-        this.inicio = inicio;
-    }
-
-    public Nodo getFin() {
-        return fin;
-    }
-
-    public void setFin(Nodo fin) {
-        this.fin = fin;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
     public boolean vacia() {
         return inicio == null && fin == null;
     }
+
 
     public void agregarInicio(Estudiante dato) {
         if (vacia()) {
@@ -169,4 +146,31 @@ public class ListaCircular {
         }
         return lista;
     }
+
+    //Getter and Setter
+    public Nodo getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(Nodo inicio) {
+        this.inicio = inicio;
+    }
+
+    public Nodo getFin() {
+        return fin;
+    }
+
+    public void setFin(Nodo fin) {
+        this.fin = fin;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+
 }

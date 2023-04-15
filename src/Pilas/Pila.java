@@ -8,6 +8,7 @@ public class Pila {
         this.cima = null;
         this.tam = 0;
     }
+
     public boolean vacia() {
         //si la cima esta en null es porque esta vacia
         return cima == null;
@@ -25,6 +26,84 @@ public class Pila {
         if (!vacia()) {
             cima = cima.getSiguiente();
             tam--;
+        }
+    }
+
+    public void ejercicio1(int x) {
+        if (!vacia()) {
+            Pila aux = new Pila();
+
+            while (!vacia()) {
+                aux.apilar(cima.getDato());
+                desapilar();
+            }
+
+            while (!aux.vacia()) {
+                for (int i = 0; i < x; i++) {
+                    apilar(aux.getCima().getDato());
+                }
+                aux.desapilar();
+            }
+
+        }
+    }
+
+    public void ejercicio2() {
+        if (!vacia()) {
+            Pila aux = new Pila();
+
+            int menor = (int) (cima.getDato());
+
+            //para vaciar la pila
+            while (!vacia()) {
+
+                if ((int) (cima.getDato()) < menor) {
+                    menor = (int) (cima.getDato());
+                }
+                aux.apilar(cima.getDato());
+                desapilar();
+            }
+
+            apilar(menor); // se ubica el menor
+
+            while (!aux.vacia()) {
+                if (!aux.getCima().getDato().equals(menor)) {
+                    apilar(aux.getCima().getDato());
+                }
+                aux.desapilar();
+
+            }
+        }
+    }
+
+    public void ejercicio3(Object dato) {
+        if (!vacia()) {
+            boolean flag = false;
+            Pila aux = new Pila();
+            while (!vacia()) {
+                if (cima.getDato().equals(dato)) {
+                    flag = true;
+                }
+                aux.apilar(cima.getDato());
+                desapilar();
+            }
+
+            if (!flag) {
+
+                while (!aux.vacia()) {
+                    apilar(aux.getCima().getDato());
+                    aux.desapilar();
+                }
+                apilar(dato);
+            } else {
+                while (!aux.vacia()) {
+                    if (!aux.getCima().getDato().equals(dato)) {
+                        apilar(aux.getCima().getDato());
+                    }
+                    aux.desapilar();
+                }
+                apilar(dato);
+            }
         }
     }
 
@@ -52,7 +131,6 @@ public class Pila {
         }
     }
 
-
     //mostrar normal
     public String mostrar() {
         String salida = "";
@@ -78,9 +156,7 @@ public class Pila {
         return salida;
     }
 
-
     //Getter and Setter
-
     public Nodo getCima() {
         return cima;
     }
