@@ -3,15 +3,20 @@
 
 
 *Este repositorio contiene códigos de Estrucuturas de Datos básicas en Java*
-1. **_Listas_**
-* *Listas simples*
-* *Listas dobles* 
-* *Listas circulares*
-2. **_Métodos de ordenamiento_**
+1. **_Métodos de ordenamiento_**
 * *Burbuja*
 * *Inserción*
 * *Selección* 
 * *QuickSort*
+
+2. **_Listas_**
+* *Listas simples*
+* *Listas dobles* 
+* *Listas circulares*
+
+3. **_Pila_**
+
+3. **_Cola_**
 
 
 
