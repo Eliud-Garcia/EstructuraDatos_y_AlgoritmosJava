@@ -1,7 +1,9 @@
 package Cola;
 
+import Pilas.Pila;
+
 public class Cola {
-    
+
     private Nodo inicio;
     private Nodo fin;
     private int cantidad; // hace referencia a la cantidad de elemento
@@ -11,7 +13,7 @@ public class Cola {
         this.fin = null;
         this.cantidad = 0;
     }
-    
+
     public boolean vacia() {
         return inicio == null && fin == null;
     }
@@ -27,7 +29,7 @@ public class Cola {
         }
         cantidad++;
     }
-    
+
     public void desencolar() {
         if (!vacia()) {
             if (inicio == fin) {
@@ -38,11 +40,10 @@ public class Cola {
             cantidad--;
         }
     }
-    
+
     public void eliminar(Object dato) {
         if (!vacia()) {
             Cola aux = new Cola();
-            
             while (!vacia()) {
                 if (!inicio.getDato().equals(dato)) {
                     aux.encolar(inicio.getDato());
@@ -54,9 +55,41 @@ public class Cola {
             cantidad = aux.getCantidad();
         }
     }
-    
-   
-    
+
+    public void ejercicio1(int x) {
+        if (!vacia()) {
+            boolean flag = false;
+            // en la cola se saca el primero
+            // y solo se agrega a lo último
+            Cola aux = new Cola();
+            while (!vacia()) {
+                if ((int) (inicio.getDato()) == x) {
+                    flag = true;
+                }
+                aux.encolar(inicio.getDato());
+                desencolar();
+            }
+
+            if (!flag) {
+                while (!aux.vacia()) {
+                    encolar(aux.inicio.getDato());
+                    aux.desencolar();
+                }
+                encolar(x);
+
+            } else {
+                encolar(x);
+                while (!aux.vacia()) {
+                    if ((int) (aux.inicio.getDato()) != x) {
+                        encolar(aux.inicio.getDato());
+                    }
+                    aux.desencolar();
+                }
+            }
+        }
+    }
+
+
     public String mostrar() {
         String salida = "";
         if (!vacia()) {
@@ -73,30 +106,30 @@ public class Cola {
     public Nodo getInicio() {
         return inicio;
     }
-    
+
     public void setInicio(Nodo inicio) {
         this.inicio = inicio;
     }
-    
+
     public Nodo getFin() {
         return fin;
     }
-    
+
     public void setFin(Nodo fin) {
         this.fin = fin;
     }
-    
+
     public int getCantidad() {
         return cantidad;
     }
-    
+
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    
+
     @Override
     public String toString() {
         return "Cola{" + "inicio=" + inicio + ", fin=" + fin + ", cantidad=" + cantidad + '}';
     }
-    
+
 }

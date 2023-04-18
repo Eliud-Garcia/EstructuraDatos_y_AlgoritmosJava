@@ -107,6 +107,39 @@ public class Pila {
         }
     }
 
+    public boolean recorrerOtraPila(Pila pila, Object dato) {
+        boolean salida = false;
+        if (!pila.vacia()) {
+            Nodo nodo = pila.getCima();
+            while (pila.cima != null) {
+                if (dato == pila.cima.getDato()) {
+                    salida = true;
+                }
+                pila.cima = pila.cima.getSiguiente();
+            }
+            pila.cima = nodo;
+        }
+        return salida;
+    }
+
+    public void ejercicio4(Pila pila1, Pila pila2) {
+        if (!vacia()) {
+            Pila aux = new Pila();
+            while (!pila1.vacia()) {
+                if (recorrerOtraPila(pila2, pila1.getCima().getDato())) {
+                    pila1.desapilar();
+                } else {
+                    aux.apilar(pila1.getCima().getDato());
+                    pila1.desapilar();
+                }
+            }
+            while (aux.getCima() != null) {
+                apilar(aux.getCima().getDato());
+                aux.desapilar();
+            }
+        }
+    }
+
     public void eliminar(Object dato) {
         if (!vacia()) {
             Nodo aux = cima;
