@@ -135,9 +135,9 @@ public class ListaCircular {
         cantidad--;
     }
 
-        String lista = "";    public String mostrar() {
-
-            if (!vacia()) {
+    public String mostrar() {
+        String lista = "";
+        if (!vacia()) {
             Nodo aux = inicio;
             do {
                 lista += aux.getDato() + "\n";

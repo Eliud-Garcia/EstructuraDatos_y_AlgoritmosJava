@@ -51,27 +51,21 @@ public class Pila {
     public void ejercicio2() {
         if (!vacia()) {
             Pila aux = new Pila();
-
             int menor = (int) (cima.getDato());
-
             //para vaciar la pila
             while (!vacia()) {
-
                 if ((int) (cima.getDato()) < menor) {
                     menor = (int) (cima.getDato());
                 }
                 aux.apilar(cima.getDato());
                 desapilar();
             }
-
             apilar(menor); // se ubica el menor
-
             while (!aux.vacia()) {
                 if (!aux.getCima().getDato().equals(menor)) {
                     apilar(aux.getCima().getDato());
                 }
                 aux.desapilar();
-
             }
         }
     }
@@ -87,9 +81,7 @@ public class Pila {
                 aux.apilar(cima.getDato());
                 desapilar();
             }
-
             if (!flag) {
-
                 while (!aux.vacia()) {
                     apilar(aux.getCima().getDato());
                     aux.desapilar();
@@ -153,8 +145,7 @@ public class Pila {
                 //esta condicion es en caso de que no se encuentre
                 // el elemento a eliminar
                 cima = aux;
-            } else {
-                //en caso de que si esté el elemento a eliminar
+            } else { //en caso de que si esté el elemento a eliminar
                 desapilar();
                 while (pilaAux.getCima() != null) {
                     apilar(pilaAux.getCima().getDato());

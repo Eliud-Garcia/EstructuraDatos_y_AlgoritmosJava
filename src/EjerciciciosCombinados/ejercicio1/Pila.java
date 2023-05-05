@@ -1,4 +1,4 @@
-package EjerciciciosCombinados;
+package EjerciciciosCombinados.ejercicio1;
 
 public class Pila {
     private Nodo cima;
