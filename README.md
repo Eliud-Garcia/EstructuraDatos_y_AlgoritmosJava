@@ -15,8 +15,16 @@
 * *Listas circulares*
 
 3. **_Pila_**
+* *Insertar*
+* *Eliminar*
+* *Recorrer*
+* *Ejercicios*
 
 3. **_Cola_**
+* *Insertar*
+* *Eliminar*
+* *Recorrer*
+* *Ejercicios*
 
 
 
