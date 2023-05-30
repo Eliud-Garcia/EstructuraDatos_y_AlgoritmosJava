@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 
 
-public class ElaSortingBooks {
+public class Template {
 
     
     static FastReader en = new FastReader();
