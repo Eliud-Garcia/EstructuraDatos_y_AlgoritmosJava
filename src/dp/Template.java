@@ -1,64 +1,55 @@
 
-import java.util.*;
-import java.io.*;
 
-public class Template {
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.HashMap;
+import java.util.StringTokenizer;
 
+
+public class ElaSortingBooks {
+
+    
     static FastReader en = new FastReader();
-    static final Random random = new Random();
-    static long mod = 1000000007L;
-    static HashMap<String, Integer> map = new HashMap<>();
+    static FastWriter out = new FastWriter();
 
-    public static void main(String args[]) throws IOException {
-        int casos = en.nextInt();
-        StringBuilder res = new StringBuilder();
-        int n = 1;
-        loop:
-        while (casos-- > 0) {
-                
-            
+    static void solve() throws IOException{
+        
+      
+
+    }
+
+    public static void main(String[] args) throws IOException {
+        int t;
+        t = en.nextInt();
+        while (t-- > 0) {
+            solve();
         }
-        print(res);
-
+        out.close();
     }
 
-    static int max(int a, int b) {
-        if (a < b) {
-            return b;
+    static class FastWriter {
+
+        private final BufferedWriter bw;
+
+        public FastWriter() {
+            this.bw = new BufferedWriter(new OutputStreamWriter(System.out));
         }
-        return a;
-    }
 
-    static void ruffleSort(int[] a) {
-        int n = a.length;
-        for (int i = 0; i < n; i++) {
-            int oi = random.nextInt(n), temp = a[oi];
-            a[oi] = a[i];
-            a[i] = temp;
+        public void print(Object object) throws IOException {
+            bw.append("" + object);
         }
-        Arrays.sort(a);
-    }
 
-    static < E> void print(E res) {
-        System.out.println(res);
-    }
-
-    static int MCD(int a, int b) {
-        if (b == 0) {
-            return a;
+        public void println(Object object) throws IOException {
+            print(object);
+            bw.append("\n");
         }
-        return MCD(b, a % b);
-    }
 
-    static int MCM(int a, int b) {
-        return (a / MCD(a, b)) * b;
-    }
-
-    static int abs(int a) {
-        if (a < 0) {
-            return -1 * a;
+        public void close() throws IOException {
+            bw.close();
         }
-        return a;
     }
 
     static class FastReader {
